@@ -11,6 +11,7 @@ body {
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
 }
 
 code {
@@ -54,6 +55,9 @@ code {
 }
 .bg-slider3 {
   background-image: url(https://www.vmogroup.com/static/media/img_youshare_wecare.c906e26b.png);
+}
+.bg-meetus {
+  background-image: url(https://www.vmogroup.com/static/media/BG.68e79496.png);
 }
 .bg-set {
   background-position: center;

@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/index";
 import Services from "./pages/service";
 import Profolio from "./pages/Profolio";
+import AboutUs from "./pages/aboutus";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home></Home>} />
           <Route path="/services/*" element={<Services></Services>}></Route>
           <Route path="/portfolio" element={<Profolio></Profolio>} />
+          <Route path="/about-us/*" element={<AboutUs></AboutUs>} />
         </Routes>
       </div>
       <Footer></Footer>

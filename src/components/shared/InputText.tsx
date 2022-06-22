@@ -7,6 +7,7 @@ interface InputTextProps extends React.HTMLAttributes<HTMLInputElement> {
 
 const InputText: React.FC<InputTextProps> = (props: InputTextProps) => {
   const [value, setValue] = React.useState<string>("");
+  const [focused, setFocused] = React.useState(false);
 
   return (
     <div

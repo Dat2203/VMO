@@ -1,9 +1,11 @@
 import React from "react";
 import Input from "./InputText";
 
-const Form: React.FC<HTMLInputElement> = (props: HTMLInputElement) => {
+interface Props extends HTMLInputElement {}
+
+const Form = () => {
   return (
-    <form className="grid grid-cols-1 xl:grid-cols-2 gap-x-[30px]">
+    <form className="grid bg-inherit grid-cols-1 xl:grid-cols-2 gap-x-[30px]">
       <div>
         <Input placeholder="Name" className="h-[60px] items-center"></Input>
         <Input placeholder="Name" className="h-[60px] items-center"></Input>
@@ -16,3 +18,4 @@ const Form: React.FC<HTMLInputElement> = (props: HTMLInputElement) => {
     </form>
   );
 };
+export default React.memo(Form);

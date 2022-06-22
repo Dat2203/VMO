@@ -32,7 +32,7 @@ const NavItem = (props: NavItemProps) => {
   const location = useLocation().pathname;
 
   const isActiveF = React.useEffect(() => {
-    setIsActive(path === getPath(location, 1));
+    setIsActive(getPath(path, 1) === getPath(location, 1));
   }, [path, location]);
 
   return (

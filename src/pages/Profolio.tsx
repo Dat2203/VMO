@@ -6,7 +6,10 @@ const Profolio = () => {
   return (
     <div className="">
       <Banner></Banner>
-      <div className="p-x-root grid lg:grid-cols-3 grid-cols-1 mt-36 gap-6">
+      <div className="p-x-root grid lg:grid-cols-4 grid-cols-1 mt-36 gap-6">
+        <ProfolioItem></ProfolioItem>
+        <ProfolioItem></ProfolioItem>
+        <ProfolioItem></ProfolioItem>
         <ProfolioItem></ProfolioItem>
         <ProfolioItem></ProfolioItem>
         <ProfolioItem></ProfolioItem>

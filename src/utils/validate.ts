@@ -1,4 +1,4 @@
-interface ErroForm {
+interface Form {
   name?: string;
   email?: string;
   phoneNumber?: string;
@@ -6,7 +6,7 @@ interface ErroForm {
 interface FormValue {}
 
 export const validateInfo = (values: any) => {
-  let errors: ErroForm = {};
+  let errors: Form = {};
 
   if (!values.name.trim()) {
     errors.name = "Name can not be empty.";

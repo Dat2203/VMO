@@ -18,7 +18,7 @@ export interface Icon {
   className?: string;
 }
 export interface DropdownItem {
-  name: string;
+  title: string;
   slug: string;
 }
 

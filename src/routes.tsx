@@ -23,7 +23,6 @@ const routes: Route[] = [
     title: "PORTFOLIO",
     component: Profolio,
     href: "/portfolio",
-    // dropdownData: SERVICES,
     dropdownPath: (data: DropdownItem) => data.slug,
     listKey: (data: DropdownItem) => data.slug,
   },
@@ -40,7 +39,7 @@ const routes: Route[] = [
   {
     title: "ABOUT US",
     component: Home,
-    href: "/aboutus",
+    href: "/about-us",
     dropdownData: ABOUTUS,
     dropdownPath: (data: DropdownItem) => data.slug,
     listKey: (data: DropdownItem) => data.slug,

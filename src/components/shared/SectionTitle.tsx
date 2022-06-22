@@ -15,8 +15,8 @@ const SectionTitle = (props: Props) => {
   const { title, description, classTitle, classDescription, children } = props;
 
   return (
-    <div className="p-x-root py-32 bg-text  w-full ">
-      <div className="g mb-12 lg:flex items-center justify-center">
+    <div className=" py-32 bg-text  w-full ">
+      <div className=" mb-12  lg:flex items-center justify-center">
         <HightlightFirstWord
           className={classNames(
             "text-primary uppercase font-[700]  text-[40px] ",
@@ -26,14 +26,7 @@ const SectionTitle = (props: Props) => {
         />
       </div>
       {description && (
-        <p
-          className={classNames(
-            "text-primary uppercase font-[700]  text-[40px] ",
-            classDescription
-          )}
-        >
-          {description}
-        </p>
+        <p className={classNames(classDescription)}>{description}</p>
       )}
       {children}
     </div>

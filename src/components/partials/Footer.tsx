@@ -3,6 +3,7 @@ import { SERVICES, ABOUTUS } from "../../constants";
 import HightlightFirstWord from "../shared/HightlightFirstWord";
 import Input from "../shared/InputText";
 import ColumnNav from "../shared/ColumnNav";
+import Form from "../shared/Form";
 
 const Footer = () => {
   return (
@@ -16,18 +17,9 @@ const Footer = () => {
           Whatever your ambition, we’d love to design and build your next big
           idea or lend a hand on an existing one.
         </p>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-[30px]">
-          <div>
-            <Input placeholder="Name" className="h-[60px] items-center"></Input>
-            <Input placeholder="Name" className="h-[60px] items-center"></Input>
-            <Input placeholder="Name" className="h-[60px] items-center"></Input>
-          </div>
-
-          <Input placeholder="Massage" className="h-1/2"></Input>
-
-          <div></div>
-        </div>
+        <Form></Form>
       </div>
+
       <div className="bg-primary px-4 xl:px-[200px] py-[100px] flex space-x-14">
         <ColumnNav listNav={ABOUTUS} title="About us"></ColumnNav>
         <ColumnNav listNav={SERVICES} title="Sevices"></ColumnNav>

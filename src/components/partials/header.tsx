@@ -7,17 +7,41 @@ import Tooltip from "../shared/Tooltip";
 import { HiMenu } from "react-icons/hi";
 import { useLocation } from "react-router";
 import routes from "../../routes";
+import { getPath } from "../../utils";
 
 const Header = () => {
+  const [show, setShow] = React.useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = React.useState<number>(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   const [secondVariant, setSecondVariant] = React.useState<boolean>(false);
   const [toggleMoblie, setToggleMoblie] = React.useState<boolean>(false);
   const menuLeft = React.useRef<HTMLDivElement>(null);
-  let pathname = useLocation().pathname;
+  let pathname = getPath(useLocation().pathname, 1);
 
   React.useEffect(() => {
     if (
       pathname === "/recruitment" ||
-      pathname === "/aboutus" ||
+      pathname === "/about-us" ||
       pathname === "/contactus"
     ) {
       setSecondVariant(true);
@@ -34,8 +58,9 @@ const Header = () => {
     <>
       <div
         className={classNames(
-          "px-[40px] lg:px-[150px] flex space-between justify-between items-center h-[70px] lg:h-[120px] fixed top-0 w-full z-50 transition duration-500  drop-shadow-md ",
-          secondVariant ? "bg-white" : "bg-primary"
+          "px-[40px] lg:px-[150px] flex space-between justify-between items-center h-[70px] lg:h-[120px] fixed top-0 w-full z-50 transition duration-100  drop-shadow-md  ease-linear ",
+          secondVariant ? "bg-white" : "bg-primary",
+          show ? "" : "translate-y-[-100%]"
         )}
       >
         <Link to="/">
@@ -83,7 +108,11 @@ const Header = () => {
                 textPrimary={secondVariant ? "text-primary" : "text-white"}
                 textHover={secondVariant ? "text-extra" : "text-[whitesmoke]"}
                 title={route.title}
-                path={route.href}
+                path={
+                  route.dropdownData && route.dropdownPath
+                    ? route.dropdownPath(route.dropdownData[0])
+                    : route.href
+                }
                 key={route.href}
                 activeNav={true}
                 activeUnderline={true}
@@ -94,7 +123,11 @@ const Header = () => {
                   textPrimary={secondVariant ? "text-primary" : "text-white"}
                   textHover={secondVariant ? "text-extra" : "text-[whitesmoke]"}
                   title={route.title}
-                  path={route.href}
+                  path={
+                    route.dropdownData && route.dropdownPath
+                      ? route.dropdownPath(route.dropdownData[0])
+                      : route.href
+                  }
                   key={route.href}
                   dropdown={route.dropdown}
                   activeNav={true}

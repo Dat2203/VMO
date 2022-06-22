@@ -1,6 +1,6 @@
-import { Banner } from "./interfaces";
+import { Banner, DropdownItem } from "./interfaces";
 
-export const SERVICES = [
+export const SERVICES: DropdownItem[] = [
   { slug: "/services/odc" || "/", title: "Offshore development" },
   { slug: "/services/mobile-development", title: "Mobile Development" },
   {
@@ -496,3 +496,59 @@ export const OSVMObile = [
 ];
 
 export const Profolio = [{}];
+
+export const Manager = [
+  {
+    name: "Hoang Tuan HAI",
+    position: "Chief Executive Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Hoang_Tuan_Hai_CEO.ebadd10a.png",
+  },
+  {
+    name: "Hoang Hai VIET",
+    position: "Japan Market Director",
+    image:
+      "https://www.vmogroup.com/static/media/Hoang_Hai_Viet_Japan_Market_Director.f08f19c8.jpg",
+  },
+  {
+    name: "Yusuf Saib",
+    position: "US Market Director",
+    image: "https://www.vmogroup.com/static/media/Yusuf.43c98d6d.png",
+  },
+  {
+    name: "Pham Thi NHUNG",
+    position: "Chief Human Resources Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Pham_Thi_Nhung_CHRO.49b06f42.jpg",
+  },
+  {
+    name: "Nguyen Khanh DIEP",
+    position: "Chief Business Officer - Global Market",
+    image:
+      "https://www.vmogroup.com/static/media/Nguyen_Khanh_Diep(Jamie)_Sales_Manager.32349e91.jpg",
+  },
+  {
+    name: "Nguyen Thi Phuong MAI",
+    position: "Chief Executive Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Nguyen_Thi_Phuong_Mai.322db647.jpg",
+  },
+  {
+    name: "Ngo Quang MINH",
+    position: "Chief Production Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Ngo_Quang_Minh_CPO.e7278622.jpg",
+  },
+  {
+    name: "Nguyen Duc HANH",
+    position: "Chief Operations Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Nguyen_Duc_Hanh_COO.45aa52d4.jpg",
+  },
+  {
+    name: "Hoang Van THOAN",
+    position: "Chief Technology Officer",
+    image:
+      "https://www.vmogroup.com/static/media/Hoang_Van_Thoan_CTO.413ebaf1.jpg",
+  },
+];

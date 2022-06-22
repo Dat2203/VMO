@@ -61,7 +61,7 @@ const ODC = () => {
           <p className="font-[700] text-[40px]  ">
             You share it We care <p className="text-secondary">IT</p>
           </p>
-          <button className=" mt-8 p-8 font-[700] text-xl rounded-md text-md border-2 flex items-center justify-between ">
+          <button className="hover:bg-secondary hover:border-secondary mt-8 p-8 font-[700] text-xl rounded-md text-md border-2 flex items-center justify-between ">
             Contact us
           </button>
         </div>
